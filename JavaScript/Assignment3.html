@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<p id="target"></p>
+    <script>
+        'use strict';
+        const number1 = parseInt(prompt('Enter the first integer:'));
+        const number2 = parseInt(prompt('Enter the second integer:'));
+        const number3 = parseInt(prompt('Enter the third integer:'));
+        const sum = number1 + number2 + number3;
+        const product = number1 * number2 * number3
+        const average = sum / 3;
+        document.querySelector('#target').innerHTML = 'Sum of integers: ' + sum +
+        ' Product of integers: ' + product +
+        ' Average of integers: ' + average;
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<p id="targed"></p>
+<script>
+  let dices = parseInt(prompt('Enter the number of dices'));
+  let target = parseInt(prompt('Enter the sum of dice eyes.'));
+  let success = 0;
+  let total = 10000;
+
+  for (let i = 0; i < total; i++) {
+    let sum = 0;
+    for (let j = 0; j < dices; j++) {
+      let diceRoll = Math.floor(Math.random() * 6) + 1;
+      sum += diceRoll;
+    }
+    if (sum === target) {
+      success++;
+    }
+  }
+  const probability = (success / total) * 100;
+  document.querySelector('#targed').innerHTML = "The probability of getting a sum of " + target + " with " + dices + " dice is approximately " + probability.toFixed(2) + "%.";
+</script>
+</body>
+</html>

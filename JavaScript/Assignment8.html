@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<p id="target"></p>
+<ul id="leap"></ul>
+<script>
+  'use strict';
+  function leapYear(year) {
+    return ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0);
+  }
+  const startYear = parseInt(prompt('Enter a start year.'));
+  const endYear = parseInt(prompt('Enter a end year.'));
+  let leapList = document.getElementById('leap')
+  if (startYear <= endYear) {
+    for (let year = startYear; year <=endYear; year++){
+      if (leapYear(year)) {
+        let yearItem = document.createElement('li')
+        yearItem.textContent = year;
+        leapList.appendChild(yearItem)
+
+      }
+    }
+  }
+</script>
+</body>
+</html>

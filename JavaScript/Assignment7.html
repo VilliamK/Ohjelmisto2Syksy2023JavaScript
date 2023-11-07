@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<p id="target"></p>
+    <script>
+        'use strict';
+        const dices = parseInt(prompt('How many dice rolls?'))
+        let sum = 0;
+        for (let i = 0; i < dices; i++) {
+          const dice = Math.floor(Math.random() * 6) + 1
+          sum += dice
+        }
+        document.querySelector('#target').innerHTML = 'Sum of dice rolls is: ' +sum;
+    </script>
+</body>
+</html>
+

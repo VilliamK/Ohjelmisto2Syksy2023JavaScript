@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<p id="target"></p>
+    <script>
+      const dogs = [];
+
+      for (let i = 0; i < 6; i++) {
+          let dogName = prompt(`Give the ${i+1} dog name.`);
+          dogs.push(dogName);
+        }
+
+      dogs.reverse();
+      const ul = document.createElement('ul');
+
+      for (let i = 0; i < dogs.length; i++) {
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(dogs[i]));
+        ul.appendChild(li);
+      }
+
+      document.body.appendChild(ul);
+
+
+    </script>
+</body>
+</html>

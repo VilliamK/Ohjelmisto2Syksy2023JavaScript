@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<p id="target"></p>
+<script>
+
+  let number;
+  const numbers = [];
+
+  do {
+    number = parseInt(prompt('Give a number'));
+    numbers.push(number)
+        } while (number !== 0);
+
+  numbers.sort((a,b) => b-a)
+
+  for (const number of numbers) {
+    console.log(number);
+  }
+
+</script>
+</body>
+</html>

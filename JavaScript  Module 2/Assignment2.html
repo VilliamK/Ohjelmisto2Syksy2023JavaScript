@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const amount = parseInt(prompt("Enter the number of participants."));
+        const names = [];
+        for (let i = 0; i < amount; i++) {
+          const name = prompt('Enter the name of participant.');
+          names.push(name)
+        }
+        names.sort()
+
+        const ol = document.createElement('ol')
+        for (let i = 0; i < names.length; i++) {
+          const li = document.createElement('li');
+          li.appendChild(document.createTextNode(names[i]));
+          ol.appendChild(li)
+        }
+
+        document.body.appendChild(ol)
+
+    </script>
+</body>
+</html>

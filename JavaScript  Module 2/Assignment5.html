@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<p id="target"></p>
+<script>
+  'use strict';
+  const numbers = [];
+
+  while (true) {
+    let number = parseInt(prompt('Enter a number,'));
+    if (numbers.includes(number)) {
+      alert(`The number ${number} has already been given.`);
+      break;
+    } else {
+      numbers.push(number);
+    }
+  }
+  numbers.sort((a, b) => a - b);
+  console.log(numbers.join(', '));
+</script>
+</body>
+</html>

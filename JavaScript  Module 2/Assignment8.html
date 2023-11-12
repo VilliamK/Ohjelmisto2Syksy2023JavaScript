@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<h2>Array of strings</h2>
+<p id="target"></p>
+<p>Thank you!</p>
+    <script>
+        'use strict';
+        function concat(namesArray){
+          let strings = ""
+          for (let i = 0; i < namesArray.length; i++) {
+            strings += namesArray[i]
+          }
+          return strings
+        }
+
+        const arrayOfNames = ["Miina", "Kenttä", "Anu", "Saukko"]
+        const conArray = concat(arrayOfNames)
+
+        document.querySelector('#target').innerHTML=conArray
+
+
+    </script>
+</body>
+</html>

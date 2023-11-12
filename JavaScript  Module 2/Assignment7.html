@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<h2>Noppafunktio tahkoilla</h2>
+<p id="target"></p>
+    <script>
+        'use strict';
+        function dice(sides){
+          return Math.floor(Math.random() * sides) + 1;
+        }
+
+        let tulos = 0;
+        const side = +prompt('Give the number of sides in the dice.')
+
+        do {
+          tulos = dice(side);
+          document.write('<ul>');
+          document.write('<li>' + tulos + '</li>')
+          document.write('</ul>')
+        } while (tulos !== side);
+
+    </script>
+</body>
+</html>

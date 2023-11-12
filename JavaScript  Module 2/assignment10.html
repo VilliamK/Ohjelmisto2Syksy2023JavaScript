@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<p id="target"></p>
+    <script>
+        'use strict';
+        function initializeCandidates(numCandidates) {
+    const candidates = [];
+    for (let i = 1; i <= numCandidates; i++) {
+        const name = prompt(`Name for candidate ${i}: `);
+        candidates.push({ name, votes: 0 });
+    }
+    return candidates;
+}
+
+function conductVoting(candidates, numVoters) {
+    for (let i = 1; i <= numVoters; i++) {
+        const vote = prompt(`Voter ${i}, enter the candidate's name (press Enter for an empty vote): `);
+        if (vote !== "") {
+            const candidate = candidates.find(candidate => candidate.name === vote);
+            if (candidate) {
+                candidate.votes++;
+                console.log(`Vote for ${vote} recorded.`);
+            } else {
+                console.log(`Invalid candidate name: ${vote}. Vote not recorded.`);
+            }
+        } else {
+            console.log(`Empty vote recorded.`);
+        }
+    }
+}
+
+function announceResults(candidates) {
+    const sortedCandidates = candidates.sort((a, b) => b.votes - a.votes);
+    console.log(`\nThe winner is ${sortedCandidates[0].name} with ${sortedCandidates[0].votes} votes.\nResults:`);
+    sortedCandidates.forEach(candidate => {
+        console.log(`${candidate.name}: ${candidate.votes} votes`);
+    });
+}
+
+const numCandidates = parseInt(prompt('Enter the number of candidates: '), 10);
+const candidates = initializeCandidates(numCandidates);
+
+const numVoters = parseInt(prompt('Enter the number of voters: '), 10);
+conductVoting(candidates, numVoters);
+announceResults(candidates);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<h2>Noppafunktio</h2>
+<p id="target"></p>
+    <script>
+        'use strict';
+        function dice(){
+          return Math.floor(Math.random() * 6) + 1;
+        }
+
+        let tulos = 0;
+
+        do {
+          tulos = dice();
+          document.write('<ul>');
+          document.write('<li>' + tulos + '</li>')
+          document.write('</ul>')
+        } while (tulos !==6);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript testing</title>
+</head>
+<body>
+<p id="target"></p>
+<script>
+  'use strict';
+
+  function even(arrayNumbers) {
+    let evens = [];
+    for (let i = 0; i < arrayNumbers.length; i++) {
+      if (arrayNumbers[i] % 2 === 0) {
+        evens.push(arrayNumbers[i]);
+      }
+
+    }
+    return evens;
+  }
+
+  const numbers = [2, 7, 4, 9, 6];
+  const evenNumbers = even(numbers);
+  console.log('Original numbers: ' + numbers);
+  console.log('Even numbers: ' + evenNumbers);
+
+</script>
+</body>
+</html>

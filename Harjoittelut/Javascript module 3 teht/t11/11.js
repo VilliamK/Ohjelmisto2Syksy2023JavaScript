@@ -93,25 +93,44 @@ const picArray = [
 ];
 
 const div = document.getElementById("pictures");
+const dialog = document.getElementById('imageModal');
+const img = document.getElementById('modalImage')
+const close = document.getElementById('closeModal')
 
-for (let pic of picArray) {
+
+
+function openModal(imageSrc, altText) {
+  img.src = imageSrc;
+  img.alt = altText;
+  dialog.showModal();
+}
+
+
+
+function closeModal() {
+  dialog.close()
+}
+
+
+
+function createArticle(item){
   const articleE = document.createElement('article');
   articleE.classList.add('card');
 
   const titleE = document.createElement('h2');
-  titleE.textContent = pic.title;
+  titleE.textContent = item.title;
 
   const figureE = document.createElement('figure');
 
   const imgE = document.createElement('img');
-  imgE.src = pic.image.medium;
-  imgE.alt = pic.title;
+  imgE.src = item.image.medium;
+  imgE.alt = item.title;
 
   const figE = document.createElement('figcaption');
-  figE.textContent = pic.caption;
+  figE.textContent = item.caption;
 
   const pE = document.createElement('p');
-  pE.textContent = pic.description;
+  pE.textContent = item.description;
 
   figureE.appendChild(imgE);
   figureE.appendChild(figE);
@@ -119,8 +138,25 @@ for (let pic of picArray) {
   articleE.appendChild(figureE);
   articleE.appendChild(pE);
   div.appendChild(articleE);
+
+
+  articleE.addEventListener('click', function () {
+    openModal(item.image.large, item.title);
+  })
+
+  return articleE;
 }
 
+function populateImageSection() {
+  picArray.forEach((item, index) => {
+    const article = createArticle(item, index);
+    div.appendChild(article);
+  })
+}
+
+close.addEventListener('click', closeModal);
+
+populateImageSection()
 
 
 
